@@ -16,3 +16,110 @@
     --color-hero-overlay: rgba(57, 24, 111, 0.4);
     --color-course-overlay: rgba(32, 8, 19, 0.63);
   }
+
+/*global*/
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+body {
+    margin: 0px;
+    font-family: var(--font-family-body);
+}
+img {
+    display: block;
+}
+
+/*header*/
+.header {
+    height: 80px;
+    background-color: var(--color-background-black);
+    display: flex;
+    justify-content: center; /*左右の中央ぞろえ*/
+    align-items: center; /*上下の中央ぞろえ*/
+}
+
+.header-logo-wrapper {
+    margin: 0px;
+}
+
+.header-logo {
+    height: 50px;
+
+}
+
+@media (max-width: 750px){
+    .header {
+        height: 60px;
+    }
+    .header-logo {
+        height: 30px;
+    }
+}
+/*hero*/
+
+.hero {
+    background-image: url("./img/hero.png");
+    background-size: cover; /*containerの幅に合わせて画像全体が表示される*/
+    display: flex;
+    justify-content: center;/*これでcontainerが中央に表示されるようになる*/
+    align-items: center;
+    padding: 94px,40px;
+
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-hero-overlay);
+}
+
+.hero-container {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: flex-end;
+    /*これを使うと右に寄せることが出来る*/
+    z-index: 1;
+    /*値が大きい方が重ね合わせた時に優先されるようなる*/
+}
+
+.hero-texts {
+    color: var(--color-accent-yellow);
+    display: flex;
+    flex-direction: column; /*flex-boxを使ったものを縦並びにする*/
+    gap: 30px;
+}
+
+.hero-main-copy {
+    font-family: var(--font-family-heading);
+    font-size: 64px;
+    line-height: 1;
+    margin: 0px;
+    letter-spacing: 0.05em;
+}
+.hero-main-copy-accent {
+    color: var(--color-accent-red);
+}
+
+
+.hero-sub-copy {
+    margin: 0px;
+}
+
+@media (max-width:750px) {
+    .hero {
+        padding:40px,20px;
+    }
+    .hero-container {
+        justify-content: flex-start; /*これを使うと左寄せになる*/
+    }
+    .hero-texts {
+        gap: 20px;
+    }
+}
