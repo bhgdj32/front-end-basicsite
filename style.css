@@ -38,6 +38,11 @@ img {
     display: flex;
     justify-content: center; /*左右の中央ぞろえ*/
     align-items: center; /*上下の中央ぞろえ*/
+    position: fixed; /*画面全体に対して配置を指定する*/
+    top: 0;
+    left: 0;
+    z-index: 10; 
+    width: 100%;
 }
 
 .header-logo-wrapper {
@@ -65,18 +70,20 @@ img {
     display: flex;
     justify-content: center;/*これでcontainerが中央に表示されるようになる*/
     align-items: center;
-    padding: 94px,40px;
-
+    padding: 96px 40px;
+    margin-top: 80px; /*固定したheaderによって、heroが隠れないようにするため*/
+    position: relative;/*子要素や擬似要素の配置基準に指定して，このheroの中で影響が反映されるようにしている*/
 }
 
-.hero::after {
+.hero::after {/*擬似要素という追加でafterは後ろにhtmlを使わずに内容を追加できる*/
     content: "";
-    position: absolute;
+    position: absolute;/*上にあるposition:relativeと書いてある要素の中に内容を追加する。何もない場合は*/
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: var(--color-hero-overlay);
+    /*背景の色を決める*/
 }
 
 .hero-container {
@@ -86,7 +93,7 @@ img {
     justify-content: flex-end;
     /*これを使うと右に寄せることが出来る*/
     z-index: 1;
-    /*値が大きい方が重ね合わせた時に優先されるようなる*/
+    /*値が大きい方が重ね合わせた時に優先されるようになる*/
 }
 
 .hero-texts {
@@ -110,11 +117,13 @@ img {
 
 .hero-sub-copy {
     margin: 0px;
+    font-size: 16px;
 }
 
 @media (max-width:750px) {
     .hero {
-        padding:40px,20px;
+        margin-top: 60px;
+        padding:40px 20px;
     }
     .hero-container {
         justify-content: flex-start; /*これを使うと左寄せになる*/
