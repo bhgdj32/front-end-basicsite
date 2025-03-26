@@ -1,0 +1,35 @@
+要件
+desktopとmobileで文字の大きさなどが変わる部分が多くあります。
+>mediaで定義する
+Cardのクリック範囲及びホバーの範囲は、カード全体です。
+CardやButtonのホバー時の見た目は右図を参照して下さい。
+ホバーした際は、0.3sかけて見た目が変化します。
+>hoverの処理を追加する？
+
+about
+about-container
+display:flexにしたら、imageとbodyの左側にabout-headがひょうじされるようになった　
+->デフォルトではflexが横並びになる設定の為にcolunmで縦並びにしないといけない
+
+section-head
+中央ぞろえにしたい->どうすれば？=>align-items(垂直になるように配置する),justfy-content(平行になるように配置する)を利用する
+文字の間隔広げたい->letter-spacingを利用する->なぜかspanで囲まれた文字には反映されなかった
+->もしかしてmargin-endとmargin-firstなどが反映されていない?
+->関係なかった
+about-section-body
+左に移動させたい->
+
+about-image
+右に移動させたい->
+
+スマホなどで見た場合の処理
+font-size: headが24px,bodyが16px
+画像が消える代わりに説明文が追加される
+->display: noneで消えるようにする
+
+courses
+cardを四枚表示する
+cardにタブボタンのような機能を付ける
+cardは右側に文字そしてその下に重なるように画像を置く
+左側に説明文が表示されるように設定しておく
+
