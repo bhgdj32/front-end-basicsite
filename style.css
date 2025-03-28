@@ -137,12 +137,13 @@ img {
 /*about*/
 .about {
     background-color: var(--color-background-black);
+    padding: 80px 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-.section {
-    padding: 80px 0px;
-    height: 428px;
-}
+
 
 
 .about-container {
@@ -150,6 +151,7 @@ img {
     gap: 40px;
     display: flex;
     flex-direction: column;
+    max-width: 880px;
 }
 
 .about-section-head {
@@ -158,15 +160,21 @@ img {
     align-items: center;
     justify-content: center;
     color: var(--color-white);
-} 
+    font-size: 32px;
+    font-family: var(--font-family-heading);
+    font-weight: 400;
+}
 
 
 .about-accent-red {
     color: var(--color-accent-red);
+    margin: 0 10px;/*なぜかspanで指定すると文字の間が空かなくなるので、marginで補強*/
+
 }
 
 .about-accent-yellow {
     color: var(--color-accent-yellow);
+    
 }
 
 .about-body-and-image{
@@ -182,6 +190,7 @@ img {
     margin: 0;
     flex: 1 0 0;
     color: var(--color-white);
+    max-width: 460px;
 }
 
 .about-image {
@@ -213,6 +222,181 @@ img {
 /*courses*/
 
 .courses {
+    background-color: var(--color-background-navy); 
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; 
+    align-items: center;
+    align-self: stretch;
 
 }
 
+.courses-container{
+    display: flex;
+    gap: 40px;
+    padding: 0 40px;
+    flex-direction: column;
+}
+
+.courses-section-head {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    color: var(--color-white);
+    font-size: 32px;
+}
+
+.courses-box-container{
+    gap: 20px;
+    display: flex;
+    flex-direction:column;
+}
+
+
+.courses-button {
+    display: flex;
+    min-height: 150px;
+    text-decoration: none;
+    box-shadow: 4px 4px 0 var(--color-accent-red);
+    transition-duration: 0.3s;
+    max-width: 800px;
+    
+}
+/*.courses-container:hover.courses-button{
+    box-shadow: 12px 12px 2px var(--color-accent-red);
+}*/
+.courses-button:hover {
+    /*ホバー時に適用したいスタイル */
+    box-shadow: 12px 12px 2px var(--color-accent-red);
+}
+
+.courses-image {
+    display: flex;
+    flex: 0 0 auto;
+    width: 250px;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    background: url("img/live.png");
+    background-size: cover;
+    position: relative;
+}
+
+.courses-image::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-course-overlay);
+}
+
+.courses-name {
+    color: var(--color-white);
+    position: relative;
+    font-size: 32px;
+    font-family: var(--font-family-heading);
+    letter-spacing: 0.05em;
+}
+
+.courses-description {
+    background: var(--color-accent-yellow);
+    transition-duration: 0.3s;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    flex: 1 0 0;
+    font-size: 16px;
+    align-self: stretch;
+
+}
+.courses-description:hover{
+    background: var(--color-course-hover-yellow);
+}
+.courses-text {
+    color: var(--color-black);
+    flex-grow: 1;
+    margin: 0;
+}
+
+.courses-next-button {
+    color: var(--color-accent-red);
+    font-size: 16px;
+}
+
+/*全てのコースを見る*/
+.courses-big-button{
+    box-shadow: 4px 4px 0 var(--color-accent-yellow);
+    background-color: var(--color-accent-red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    padding: 0 40px;
+    transition: 0.3s;
+    gap: 10px;
+    align-self: stretch;
+    text-decoration: none;
+}
+
+.courses-big-button:hover {
+    box-shadow: 12px 12px 2px var(--color-accent-yellow);
+}
+
+.courses-all-button {
+    flex-grow: 1;
+    font-size: 20px;
+    color: var(--color-white);
+    text-align: center;
+    font-family: var(--font-family-heading);
+}
+
+.courses-button-icon {
+    display: flex;
+    flex: 0 0 auto;
+    width: 40px;
+    height: 40px;
+}
+
+@media (max-width: 750px) {
+    .courses-container {
+        padding: 40px 20px;
+        gap: 40px;
+    }
+    
+    .courses-section-head {
+        font-size: 24px;
+
+    }
+    .courses-button {
+        align-items:  flex-start;
+        height: auto;
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .courses-image {
+        height: 200px;
+        width: 100%;
+    }
+    .coureses-name {
+        font-size: 24px;
+    }
+
+    .courses-text {
+        font-size: 12px;
+    }
+    .courses-next-button {
+        font-size: 12px;
+    }
+    .coourses-big-button {
+        padding: 10px 20px;
+    }
+    courses:hover.courses-big-button{
+        box-shadow: 12px 12px 2px var(--color-accent-yellow);
+    }
+}
