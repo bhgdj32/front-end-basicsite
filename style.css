@@ -363,6 +363,9 @@ img {
 }
 
 @media (max-width: 750px) {
+    .courses {
+        padding: 40px 0;
+    }
     .courses-container {
         padding: 40px 20px;
         gap: 40px;
@@ -393,10 +396,14 @@ img {
     .courses-next-button {
         font-size: 12px;
     }
-    .coourses-big-button {
+    .courses-big-button {
         padding: 10px 20px;
+        height: 40px;
     }
-    courses:hover.courses-big-button{
+    .courses-all-button {
+        font-size: 14px;
+    }
+    .courses:hover.courses-big-button{
         box-shadow: 12px 12px 2px var(--color-accent-yellow);
     }
 }
