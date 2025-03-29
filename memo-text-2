@@ -5,7 +5,14 @@ formの作成
 
 form画面を作成しようとしても、上手く左右に分けることが出来ない
 >一つのdivの箱を作って、右側をwidth:250pxでスペースを確保しつつalign-items: flex-start;
-を使って左側に寄せて固定したあとに、
-残りの部分をflex: 1 0 0;を使ってinputで埋め尽くすという方法
->display grid  にした後grid:250px,1frで左側を250pxに固定して、残りの右側を
+を使って左側に寄せて固定したあとに、残りの部分をflex: 1 0 0;を使ってinputを横に置くという方法
+>display grid  にした後grid-template-colunm:250px,1frで左側を250pxに固定して、残りの右側を
 inputで埋め尽くすという方法
+textareaの高さを調整する方法
+
+input画面のデザイン作成
+背景は黄色,border-radiousを使って丸みを持たせて、線をborderを用いて赤い線で引くようにする
+
+cssの共有化
+デザインの設定が同じ場合は,共通のclassを指定して、一つにまとめる
+ex) class = "btn(共有) 固有クラス"
