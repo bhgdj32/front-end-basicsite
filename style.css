@@ -1,7 +1,7 @@
 :root {
     --font-family-heading: "Anton", sans-serif;
     --font-family-body: "Noto Sans JP", sans-serif;
-  
+
     --color-white: #fffefc;
     --color-black: #020911;
     --color-accent-red: #f20574;
@@ -15,14 +15,15 @@
     --color-course-hover-yellow: #f4e877;
     --color-hero-overlay: rgba(57, 24, 111, 0.4);
     --color-course-overlay: rgba(32, 8, 19, 0.63);
-  }
+}
 
 /*global*/
 *,
 *::before,
-*::after{
+*::after {
     box-sizing: border-box;
 }
+
 body {
     margin: 0px;
     font-family: var(--font-family-body);
@@ -37,12 +38,15 @@ img {
     height: 80px;
     background-color: var(--color-background-black);
     display: flex;
-    justify-content: center; /*左右の中央ぞろえ*/
-    align-items: center; /*上下の中央ぞろえ*/
-    position: fixed; /*画面全体に対して配置を指定する*/
+    justify-content: center;
+    /*左右の中央ぞろえ*/
+    align-items: center;
+    /*上下の中央ぞろえ*/
+    position: fixed;
+    /*画面全体に対して配置を指定する*/
     top: 0;
     left: 0;
-    z-index: 10; 
+    z-index: 10;
     width: 100%;
 }
 
@@ -55,30 +59,38 @@ img {
 
 }
 
-@media (max-width: 750px){
+@media (max-width: 750px) {
     .header {
         height: 60px;
     }
+
     .header-logo {
         height: 30px;
     }
 }
+
 /*hero*/
 
 .hero {
     background-image: url("./img/hero.png");
-    background-size: cover; /*containerの幅に合わせて画像全体が表示される*/
+    background-size: cover;
+    /*containerの幅に合わせて画像全体が表示される*/
     display: flex;
-    justify-content: center;/*これでcontainerが中央に表示されるようになる*/
+    justify-content: center;
+    /*これでcontainerが中央に表示されるようになる*/
     align-items: center;
     padding: 96px 40px;
-    margin-top: 80px; /*固定したheaderによって、heroが隠れないようにするため*/
-    position: relative;/*子要素や擬似要素の配置基準に指定して，このheroの中で影響が反映されるようにしている*/
+    margin-top: 80px;
+    /*固定したheaderによって、heroが隠れないようにするため*/
+    position: relative;
+    /*子要素や擬似要素の配置基準に指定して，このheroの中で影響が反映されるようにしている*/
 }
 
-.hero::after {/*擬似要素という追加でafterは後ろにhtmlを使わずに内容を追加できる*/
+.hero::after {
+    /*擬似要素という追加でafterは後ろにhtmlを使わずに内容を追加できる*/
     content: "";
-    position: absolute;/*上にあるposition:relativeと書いてある要素の中に内容を追加する。何もない場合は*/
+    position: absolute;
+    /*上にあるposition:relativeと書いてある要素の中に内容を追加する。何もない場合は*/
     top: 0;
     left: 0;
     width: 100%;
@@ -100,7 +112,8 @@ img {
 .hero-texts {
     color: var(--color-accent-yellow);
     display: flex;
-    flex-direction: column; /*flex-boxを使ったものを縦並びにする*/
+    flex-direction: column;
+    /*flex-boxを使ったものを縦並びにする*/
     gap: 30px;
 }
 
@@ -111,6 +124,7 @@ img {
     margin: 0px;
     letter-spacing: 0.05em;
 }
+
 .hero-main-copy-accent {
     color: var(--color-accent-red);
 }
@@ -124,11 +138,14 @@ img {
 @media (max-width:750px) {
     .hero {
         margin-top: 60px;
-        padding:40px 20px;
+        padding: 40px 20px;
     }
+
     .hero-container {
-        justify-content: flex-start; /*これを使うと左寄せになる*/
+        justify-content: flex-start;
+        /*これを使うと左寄せになる*/
     }
+
     .hero-texts {
         gap: 20px;
     }
@@ -155,8 +172,8 @@ img {
 }
 
 .about-section-head {
-    letter-spacing:0.02em;
-    display:flex;
+    letter-spacing: 0.02em;
+    display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-white);
@@ -168,16 +185,17 @@ img {
 
 .about-accent-red {
     color: var(--color-accent-red);
-    margin: 0 10px;/*なぜかspanで指定すると文字の間が空かなくなるので、marginで補強*/
+    margin: 0 10px;
+    /*なぜかspanで指定すると文字の間が空かなくなるので、marginで補強*/
 
 }
 
 .about-accent-yellow {
     color: var(--color-accent-yellow);
-    
+
 }
 
-.about-body-and-image{
+.about-body-and-image {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -186,7 +204,7 @@ img {
 
 }
 
-.about-section-body{
+.about-section-body {
     margin: 0;
     flex: 1 0 0;
     color: var(--color-white);
@@ -195,7 +213,7 @@ img {
 
 .about-image {
     width: 100%;
-    height:100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -206,33 +224,37 @@ img {
         display: flex;
         flex-direction: column;
         align-self: stretch;
-        justify-content: center; 
+        justify-content: center;
     }
-    .about-section-head{
-        font-size: 24px;   
+
+    .about-section-head {
+        font-size: 24px;
     }
+
     .about-section-body {
         font-size: 16px;
     }
+
     .about-image {
-        display: none; 
+        display: none;
     }
 
 }
+
 /*courses*/
 
 .courses {
-    background-color: var(--color-background-navy); 
+    background-color: var(--color-background-navy);
     padding: 80px 0;
     display: flex;
     flex-direction: column;
-    gap: 30px; 
+    gap: 30px;
     align-items: center;
     align-self: stretch;
 
 }
 
-.courses-container{
+.courses-container {
     display: flex;
     gap: 40px;
     padding: 0 40px;
@@ -243,17 +265,17 @@ img {
     margin: 0;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     color: var(--color-white);
     font-size: 32px;
     font-family: var(--font-family-heading);
     letter-spacing: 0.05em;
 }
 
-.courses-box-container{
+.courses-box-container {
     gap: 20px;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
 }
 
 
@@ -264,8 +286,9 @@ img {
     box-shadow: 4px 4px 0 var(--color-accent-red);
     transition-duration: 0.3s;
     max-width: 800px;
-    
+
 }
+
 /*.courses-container:hover.courses-button{
     box-shadow: 12px 12px 2px var(--color-accent-red);
 }*/
@@ -286,7 +309,7 @@ img {
     position: relative;
 }
 
-.courses-image::before{
+.courses-image::before {
     content: "";
     position: absolute;
     top: 0;
@@ -317,9 +340,11 @@ img {
     align-self: stretch;
 
 }
-.courses-description:hover{
+
+.courses-description:hover {
     background: var(--color-course-hover-yellow);
 }
+
 .courses-text {
     color: var(--color-black);
     flex-grow: 1;
@@ -332,17 +357,20 @@ img {
 }
 
 /*全てのコースを見る*/
-.courses-big-button{
-    box-shadow: 4px 4px 0 var(--color-accent-yellow);
+.btn {
     background-color: var(--color-accent-red);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60px;
-    padding: 0 40px;
+    padding: 10px 40px;
     transition: 0.3s;
     gap: 10px;
     align-self: stretch;
+}
+
+.courses-big-button {
+    box-shadow: 4px 4px 0 var(--color-accent-yellow);
     text-decoration: none;
 }
 
@@ -369,26 +397,29 @@ img {
     .courses {
         padding: 40px 0;
     }
+
     .courses-container {
         padding: 40px 20px;
         gap: 40px;
     }
-    
+
     .courses-section-head {
         font-size: 24px;
 
     }
+
     .courses-button {
-        align-items:  flex-start;
+        align-items: flex-start;
         height: auto;
         width: 100%;
         flex-direction: column;
     }
-    
+
     .courses-image {
         height: 200px;
         width: 100%;
     }
+
     .coureses-name {
         font-size: 24px;
     }
@@ -396,17 +427,183 @@ img {
     .courses-text {
         font-size: 12px;
     }
+
     .courses-next-button {
         font-size: 12px;
     }
+
     .courses-big-button {
         padding: 10px 20px;
         height: 40px;
     }
+
     .courses-all-button {
         font-size: 14px;
     }
-    .courses:hover.courses-big-button{
+
+    .courses:hover.courses-big-button {
         box-shadow: 12px 12px 2px var(--color-accent-yellow);
     }
+}
+
+/*signup*/
+.Signup {
+    display: flex;
+    padding: 80px 0;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-accent-yellow);
+    
+
+}
+
+.signup-container {
+    padding: 0 40px;
+    max-width: 880px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.signup-header {
+    font-size: 32px;
+    letter-spacing: 0.02em;
+    font-family: var(--font-family-heading);
+}
+
+.signup-desciption {
+    margin: 0;
+    font-size: 16px;
+}
+
+.signup-form-container {
+    width: 100%;
+    display: grid;
+    margin: 0px;
+    row-gap: 40px;
+}
+
+.form-box {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 250px 1fr;
+    row-gap: 20px;
+}
+
+
+.signup-label {
+    font-size: 20px;
+    color: var(--color-black);
+}
+
+.signup-input, .signup-textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--color-form-border-red);
+    background: var(--color-form-background-yellow);
+    resize: vertical;
+    color: var(--color-black);
+
+}
+
+
+
+.signup-form-bigbutton {
+    box-shadow: 4px 4px 0px var(--color-black);
+    display: flex;
+    align-self: stretch;
+}
+
+.signup-form-bigbutton:hover {
+    box-shadow: 12px 12px 2px var(--color-black);
+}
+
+.signup-button-text {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex: 1 0 0;
+    gap: 10;
+    font-size: 20px;
+    color: var(--color-white);
+}
+
+.signup-bigbutton-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.footer {
+    display: flex;
+    padding: 60px 0px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    align-self: stretch;
+    background-color: var(--color-black);
+}
+
+.footer-head {
+    font-size: 16px;
+    font-family: var(--font-family-body);
+    color: var(--color-white);
+
+}
+
+@media (max-width: 750px) {
+    .Signup {
+        padding: 40px 20px;
+    }
+    .signup-container {
+        padding: 0;
+    }
+
+    .signup-header {
+        font-size: 24px;
+    }
+
+    .signup-desciption {
+        font-size: 16px;
+    }
+
+    .form-box {
+        grid-template-columns: 1fr;
+
+    }
+    .signup-label {
+        font-size: 16px;
+        row-gap: 10px;
+
+    }
+
+    .signup-input,
+    .signup-textarea {
+        font-size: 12px;
+        padding: 8px;
+
+    }
+
+    .signup-form-bigbutton {
+        height: 40px;
+    }
+    .signup-button-text {
+        font-size: 14px;
+
+    }
+
+    .signup-bigbutton-icon {
+        height: 30px;
+        width: 30px;
+    }
+
+    .footer {
+        padding: 40px;
+    }
+    .footer-head {
+        font-size: 12px;
+    }
+
 }
